@@ -19,7 +19,6 @@ export class MenuComponent implements OnInit {
 
   getItems() {
     this.menuService.getItems().subscribe(res => {
-      console.log(res[0])
       this.Items = res;
       console.log("Items", this.Items)
     }, (err) => console.log(err))
