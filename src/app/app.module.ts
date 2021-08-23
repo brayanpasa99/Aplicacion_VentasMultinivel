@@ -6,19 +6,24 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LobbyComponent } from './components/lobby/lobby.component'
+import { LobbyComponent } from './components/lobby/lobby.component';
+import { RegistrarClienteComponent } from './components/registrar-cliente/registrar-cliente.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    LobbyComponent
+    LobbyComponent,
+    RegistrarClienteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
