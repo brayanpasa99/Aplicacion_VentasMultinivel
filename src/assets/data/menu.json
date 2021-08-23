@@ -4,6 +4,14 @@
       "Enlace": "/lobby"
    },
    {
+      "Nombre": "Iniciar Sesión",
+      "Enlace": "/login"
+   },
+   {
+      "Nombre": "Agregar Cliente",
+      "Enlace": "/registrar-cliente"
+   },
+   {
       "Nombre": "País",
       "Enlace": "https://www.google.com"
    },
@@ -22,9 +30,5 @@
    {
       "Nombre": "Otros",
       "Enlace": "https://www.google.com"
-   },
-   {
-      "Nombre": "Agregar Cliente",
-      "Enlace": "/registrar-cliente"
    }
 ]

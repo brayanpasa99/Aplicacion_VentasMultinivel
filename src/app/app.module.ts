@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LobbyComponent } from './components/lobby/lobby.component';
 import { RegistrarClienteComponent } from './components/registrar-cliente/registrar-cliente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     MenuComponent,
     LobbyComponent,
-    RegistrarClienteComponent
+    RegistrarClienteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
