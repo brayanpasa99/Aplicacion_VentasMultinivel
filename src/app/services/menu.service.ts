@@ -11,7 +11,7 @@ export class MenuService {
   }
 
   getItems(): Observable<any> {
-    console.log("Servicio corriendo");
+    console.log("Servicio del menú corriendo");
     return this.http.get<any>("../assets/data/menu.json");
   }
 }
