@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Details } from 'src/app/models/details';
+import { Product } from 'src/app/models/product';
 import { LobbyService } from 'src/app/services/lobby.service';
 
 @Component({
@@ -7,19 +9,27 @@ import { LobbyService } from 'src/app/services/lobby.service';
   styleUrls: ['./lobby.component.scss']
 })
 export class LobbyComponent implements OnInit {
-  Products: any;
+  products: Product[];
+  @Input() details: Details[];
 
   constructor(private lobbyService: LobbyService) { }
 
   ngOnInit(): void {
-    this.getProductos();
+    this.getProducts();
   }
 
-  getProductos() {
+  getProducts() {
     this.lobbyService.getProducts().subscribe(res => {
-      this.Products = res;
-      console.log("Productos", this.Products)
+      this.products = res;
+      console.log("Products", this.products)
     }, err => console.log(err))
+  }
+
+  addDetail(product:Product){
+    var amount = (<HTMLInputElement>document.getElementById("amount")).valueAsNumber;
+    var detail = new Details(product)
+    detail.amount = amount
+    this.details.push(detail)
   }
 
 }

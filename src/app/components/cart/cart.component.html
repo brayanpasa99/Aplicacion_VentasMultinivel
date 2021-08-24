@@ -1,0 +1,39 @@
+<div class="scrollbar scrollbar-primary overflow-auto container-fluid mh-100">
+    <div class="row justify-content-center force-overflow me-5">
+        <div class="row input-group-sm mb-3 mt-3 ms-1 card" *ngFor="let detail of details">
+            <div class = "row">
+                <img src="{{ detail.product.image }}" class="card-img-top col mt-3" alt="" height="200">
+                <div class="col">
+                    <h5 class="card-title row mt-3 ">{{ detail.product.name }}</h5>
+                    <p class="card-text row ms-1">{{ detail.product.region }}</p>
+                    <p class="card-text row ms-1">{{ detail.product.category }}</p>
+                    <p class="card-text row ms-1">{{ detail.product.subcategory }}</p>
+                    <p class="card-text row ms-1">{{ detail.product.description }}</p>
+                    <p class="card-text row ms-1">{{ detail.product.price }}</p>
+                    <div class="input-group input-group-sm mb-3 me-5">
+                        <span class="input-group-text" id="inputGroup-sizing-sm">Cantidad: </span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" [(ngModel)]="detail.amount"
+                            aria-describedby="inputGroup-sizing-sm">
+                    </div>
+                </div>   
+                <div class="col mt-3 mt-3" >   
+                    <div class="row buttons-container mt-3">
+                            <button class="buttons-cart mt-3 " (click)="addProduct(detail)" width="32" height="32"  >
+                                <img src="assets/img/add-button.svg"  width="32" height="32" class="text-center" alt="">
+                                
+                            </button>
+                            <button class="buttons-cart mt-3" (click)="removeProduct(detail)"width="32" height="32" >
+                                <img  src="assets/img/bin.svg"  width="32" height="32" class="text-center" alt="">
+                        
+                            </button>
+                            <button class="buttons-cart mt-3" (click)="subtractProduct(detail)"width="32" height="32" >
+                                <img  src="assets/img/remove.svg" width="32" height="32" class="text-center" alt="">
+                    
+                            </button>
+                        
+                    </div>                                         
+                </div>         
+            </div>                       
+        </div>
+    </div>
+</div>

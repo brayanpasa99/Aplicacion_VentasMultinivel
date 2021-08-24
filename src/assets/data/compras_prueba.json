@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Kit Higiene",
+        "region": "Colombia ",
+        "category":"hogar",
+        "subcategy":"aseo",
+        "image": "../assets/img/hygiene-products.svg",
+        "description": "Kit de limpieza del hogar",
+        "price": 20000
+    },
+    {
+        "name": "Kit Limpieza",
+        "region": "Colombia ",
+        "category":"hogar",
+        "subcategory":"aseo",
+        "image": "../assets/img/cleaning.svg",
+        "description": "Kit de limpieza del hogar",
+        "price": 25000
+    },
+    {
+        "name": "Kit de belleza",
+        "region": "Colombia ",
+        "category":"belleza",
+        "subcategory":"cuidado de la piel",
+        "image": "../assets/img/skin-care.svg",
+        "description": "Kit de cuidado personal",
+        "price": 40000
+    }
+]
