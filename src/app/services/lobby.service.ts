@@ -7,10 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class LobbyService {
 
+  URL_PRODUCTOS="http://localhost:3000/getProducts"
+
   constructor(private http:HttpClient) { }
 
   getProducts(): Observable<any>{
     console.log("Servicio de Productos corriendo")
-    return this.http.get<any>("../assets/data/producto_prueba.json");
+    return this.http.get<any>(this.URL_PRODUCTOS);
   }
 }
