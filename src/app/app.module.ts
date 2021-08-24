@@ -7,9 +7,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LobbyComponent } from './components/lobby/lobby.component';
-import { RegistrarClienteComponent } from './components/registrar-cliente/registrar-cliente.component';
+import { RegisterClientComponent } from './components/register-client/register-client.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { LoginComponent } from './components/login/login.component';
     HeaderComponent,
     MenuComponent,
     LobbyComponent,
-    RegistrarClienteComponent,
-    LoginComponent
+    RegisterClientComponent,
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
