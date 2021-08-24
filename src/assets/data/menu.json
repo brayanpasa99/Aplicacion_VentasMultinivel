@@ -9,7 +9,7 @@
    },
    {
       "Nombre": "Agregar Cliente",
-      "Enlace": "/registrar-cliente"
+      "Enlace": "/register-client"
    },
    {
       "Nombre": "País",

@@ -10,6 +10,7 @@ import { RegisterClientService } from 'src/app/services/register-client.service'
 export class RegisterClientComponent implements OnInit {
   registerClient: FormGroup;
   submitted = false;
+  Names = "";
 
   constructor(private formBuilder: FormBuilder, private registerClientService: RegisterClientService) { }
 
@@ -39,16 +40,54 @@ export class RegisterClientComponent implements OnInit {
       return;
     }
 
-    alert(
-      "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerClient.value, null, 4)
-    );
+    this.Names = this.registerClient.value.name.split(" ");
 
-  }
+    let name1 = "";
+    let name2 = "";
+    let name3 = "";
+    let name4 = "";
 
-  postCliente(){
-    this.registerClientService.postCliente().subscribe(res => {
-      
+    if (this.Names.length == 2) {
+      name1 = this.Names[0];
+      name2 = null;
+      name3 = this.Names[1];
+      name4 = null;
+    } else if (this.Names.length == 3) {
+      name1 = this.Names[0];
+      name2 = this.Names[1];
+      name3 = this.Names[2];
+      name4 = null;
+    } else if (this.Names.length == 4) {
+      name1 = this.Names[0];
+      name2 = this.Names[1];
+      name3 = this.Names[2];
+      name4 = this.Names[3];
+    }
+
+    const dataClient = {
+      CEDULA: this.registerClient.value.id,
+      FK_CEDULA_REPRESENTANTE: this.registerClient.value.agent,
+      PRIMER_NOMBRE: name1,
+      SEGUNDO_NOMBRE: name2,
+      PRIMER_APELLIDO: name3,
+      SEGUNDO_APELLIDO: name4,
+      CORREO_ELECTRONICO: this.registerClient.value.email,
+      GENERO: "F",
+      FECHA_NACIMIENTO: "29-10-1999",
+      TEL_CONTACTO: this.registerClient.value.phonenumber,
+      ESTADO: "A",
+      CIUDAD: this.registerClient.value.city,
+      DIRECCION: this.registerClient.value.address
+    }
+
+    this.registerClientService.postCliente(dataClient).subscribe( res => {
+      alert(
+        "SUCCESS!! :-)\n\n" + res.msg
+      );
     });
+
+    
+
   }
 
   onReset() {

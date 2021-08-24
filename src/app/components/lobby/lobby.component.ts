@@ -9,7 +9,8 @@ import { LobbyService } from 'src/app/services/lobby.service';
   styleUrls: ['./lobby.component.scss']
 })
 export class LobbyComponent implements OnInit {
-  products: Product[];
+  //products: Product[];
+  Products: any;
   @Input() details: Details[];
 
   constructor(private lobbyService: LobbyService) { }
@@ -20,8 +21,8 @@ export class LobbyComponent implements OnInit {
 
   getProducts() {
     this.lobbyService.getProducts().subscribe(res => {
-      this.products = res;
-      console.log("Products", this.products)
+      this.Products = res;
+      console.log("Products", this.Products)
     }, err => console.log(err))
   }
 
