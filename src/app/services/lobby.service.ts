@@ -8,10 +8,12 @@ import { Product } from '../models/product';
 })
 export class LobbyService {
 
+  URL_PRODUCTOS="http://localhost:3000/getProducts"
+
   constructor(private http:HttpClient) { }
 
   getProducts(): Observable<Product[]>{
     console.log("Servicio de Productos corriendo")
-    return this.http.get<Product[]>("../assets/data/producto_prueba.json");
+    return this.http.get<any>(this.URL_PRODUCTOS);
   }
 }
