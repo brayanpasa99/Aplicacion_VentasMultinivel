@@ -6,12 +6,12 @@ import { RegisterClientComponent } from './components/register-client/register-c
 import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
-  { 'path': '', redirectTo: '/lobby', pathMatch: 'full'},
+  { 'path': '', redirectTo: '/login', pathMatch: 'full'},
   { 'path': 'lobby', component: LobbyComponent},
   { 'path': 'login', component: LoginComponent},
   { 'path': 'register-client', component: RegisterClientComponent},
   { 'path': 'cart', component: CartComponent},
-  { 'path': '**', redirectTo: '/lobby', pathMatch: 'full'}  
+  { 'path': '**', redirectTo: '/login', pathMatch: 'full'}  
 ];
 
 @NgModule({

@@ -11,8 +11,8 @@ import { RegisterClientComponent } from './components/register-client/register-c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
-//import { ToastrModule } from 'ngx-toastr';
-//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -31,8 +31,8 @@ import { CartComponent } from './components/cart/cart.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    //BrowserAnimationsModule,
-    //ToastrModule.forRoot()
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
