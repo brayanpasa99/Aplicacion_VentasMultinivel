@@ -92,14 +92,16 @@
         class="form-control"
         id="birthday"
         aria-describedby="birthday"
+        [ngModel]='tempFechaNacimiento | date:"dd-MM-yyyy"'
+        (ngModelChange)='tempFechaNacimiento=$event'
       />
       <div *ngIf="form.birthday.errors" class="invalid-feedback">
         <div *ngIf="form.birthday.errors.required">
-          El nombre del cliente es obligatorio
+          La fecha de nacimiento del cliente es obligatoria
         </div>
       </div>
       <div id="nombreCliente" class="form-text">
-        Escriba el nombre del cliente
+        Seleccione la fecha de nacimiento del cliente
       </div>
     </div>
 

@@ -23,6 +23,7 @@ export class RegisterClientComponent implements OnInit {
 
   typesofid: any = [];
   genders: any = [];
+  tempFechaNacimiento: any;
 
   ngOnInit(): void {
     this.registerClient = this.formBuilder.group({
@@ -90,27 +91,26 @@ export class RegisterClientComponent implements OnInit {
       SEGUNDO_APELLIDO: secondlastname,
       CORREO_ELECTRONICO: this.registerClient.value.email,
       GENERO: this.registerClient.value.gender,
-      FECHA_NACIMIENTO: this.registerClient.value.birthday,
+      FECHA_NACIMIENTO: this.tempFechaNacimiento,
       TEL_CONTACTO: this.registerClient.value.phonenumber,
       ESTADO: "A",
       CIUDAD: this.registerClient.value.city,
-      DIRECCION: this.registerClient.value.address
+      DIRECCION: this.registerClient.value.address,
+      FECHA_INICIO: new Date().getDay() + "-" + new Date().getMonth() + "-" + new Date().getFullYear()
     }
 
-    const dataRepresentanteClient = {
-      FK_ID_REPRESENTANTE: this.registerClient.value.agent,
-      FK_ID_CLIENTE: this.registerClient.value.id,
-      FECHA_INICIO: new Date()
-    }
+    console.log(dataClient.FECHA_NACIMIENTO, dataClient.FECHA_INICIO);
 
-    
+    /*alert(
+      "SUCCESS!! :-)\n\n" + JSON.stringify(dataClient, null, 4)
+    );*/
 
-    /*this.registerClientService.postCliente(dataClient).subscribe(res => {
+    this.registerClientService.postCliente(dataClient).subscribe(res => {
       alert(
         "SUCCESS!! :-)\n\n" + res.msg
       );
       //this.showSuccess();
-    });*/
+    });
   }
 
   getIdentificationTypes() {

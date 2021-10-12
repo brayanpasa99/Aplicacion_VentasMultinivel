@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class RegisterClientService {
 
-  URL_CREATE = "http://localhost:3000/createClient"
+  URL = "http://localhost:3000/createClient"
 
   constructor(private http: HttpClient) { }
 
   postCliente(body): Observable<any> {
-    console.log("POST", body, this.URL_CREATE);
-    return this.http.post<any>(this.URL_CREATE, body);
+    console.log("POST", body, this.URL);
+    return this.http.post<any>(this.URL, body);
   }
 }
